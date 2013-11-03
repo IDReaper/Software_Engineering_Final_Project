@@ -1,11 +1,13 @@
+package project1;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ChocoholicsFirstWindow extends JFrame {
+public class GUITest extends JFrame {
 
-  public ChocoholicsFirstWindow() {
+  public GUITest() {
     JPanel panel = new JPanel();
     panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
@@ -31,8 +33,8 @@ public class ChocoholicsFirstWindow extends JFrame {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
-        ChocoholicsFirstWindow chocowindow = new ChocoholicsFirstWindow();
-        chocowindow.setVisible(true);
+        GUITest guitest = new GUITest();
+        guitest.setVisible(true);
       }
     });
   }
