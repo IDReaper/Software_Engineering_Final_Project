@@ -1,0 +1,30 @@
+CSC 470 Log
+
+October 29 2013 6pm - 9pm. 
+
+Jean, Gabriel and Shawn completed the Glossary for Project.
+started work on Case  
+
+October 30th 2013 6pm - 11:15
+
+Jean, Gabriel and Shawn created 1st GUI panel for the Chocoholics project.
+
+Username, Password inputs created. 
+
+Login button was created also.
+
+Login button creates new window to display member's information. 
+
+
+October 31 2013 6:00pm - 9pm
+
+Jean, Shawn, and Gabriel continued work on the project.
+
+Today we worked on the USE CASE models for the project. 
+
+
+November 2 2013 6:00 pm - 8:00 pm
+
+Shawn and Gabriel worked on the GUI for the project.
+
+Radio buttons and and tabs modified. 
