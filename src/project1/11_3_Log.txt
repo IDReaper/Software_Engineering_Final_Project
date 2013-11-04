@@ -1,0 +1,7 @@
+Sunday November 3rd 2013 5:00pm - 8:30pm
+
+
+Group met via Google Hangouts 
+
+Changed functionality to the GUI and also added new Use Case to the UML Diagram 
+Tabbed panes were able to be used in the GUI. 
