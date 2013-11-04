@@ -1,11 +1,25 @@
 package project1;
 
-import javax.swing.border.EmptyBorder;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.io. *;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+import javax.swing.border.EmptyBorder;
+
+@SuppressWarnings("serial")
 public class ChocoholicFirstWindow extends JFrame implements ActionListener {
 
   private JButton toggleButton;
@@ -13,14 +27,13 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
   private JPanel mpanel, ppanel, spanel;
   private JPanel apanel, dpanel, upanel, vpanel;
   private JTabbedPane member;
-  private JTabbedPane provider;
   private static int state = 0;
 
   public ChocoholicFirstWindow() {
     JPanel panel = new JPanel();
     panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
     add(panel);
-
+    
     //Login Dialog Box
     topPanel = new JPanel(new BorderLayout(0, 0));
     topPanel.setBorder(new EmptyBorder(new Insets(20, 25, 15, 25)));
@@ -55,49 +68,54 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     login.add(Box.createRigidArea(new Dimension(0, 5)));
     panel.add(login);
     
-    /*
+    
     //NEW PANELS START HERE______________________________________________________________
     //___________________________________________________________________________________
     //These are the new panels for the tabbed panes. Most of them still need edits. The first
     //four lines of member information panel may serve as a template for everything else.
     
-    //Member Information Panel
-    panel1 = new JPanel(new BorderLayout(0, 0));
-    panel1.setBorder(new EmptyBorder(new Insets(20, 25, 15, 25)));
-    panel1.add(new JTextArea("Current Date: 11/2/2013\nService Date: 10/14/2013\nName: Myself I"), BorderLayout.NORTH);
-    mpanel.add(panel1);
-
-    //Provider Information Panel
-    bottom = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-    ButtonGroup group = new ButtonGroup(); 
-      
-    JRadioButton mRadio = new JRadioButton("Member");
-    mRadio.setActionCommand("Member");
-    group.add(mRadio);
-    bottom.add(mRadio);
-    mRadio.addActionListener(this);
-    bottom.add(Box.createRigidArea(new Dimension(10, 0)));
+    	//Member Information Panel
+//	    panel.add(mpanel);
+    	
+//    //Provider Information Panel
+//    bottom = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+//    ButtonGroup group = new ButtonGroup(); 
+//      
+//    JRadioButton mRadio = new JRadioButton("Member");
+//    mRadio.setActionCommand("Member");
+//    group.add(mRadio);
+//    bottom.add(mRadio);
+//    mRadio.addActionListener(this);
+//    bottom.add(Box.createRigidArea(new Dimension(10, 0)));
+//    
+//    JRadioButton pRadio = new JRadioButton("Provider");
+//    pRadio.setActionCommand("Provider");
+//    group.add(pRadio);
+//    bottom.add(pRadio);
+//    pRadio.addActionListener(this);
+//    bottom.add(Box.createRigidArea(new Dimension(10, 0)));
+//    panel.add(bottom);
+//
+//    //Services Provided Panel
+//    login = new JPanel();
+//    toggleButton = new JButton("Login");
+//    toggleButton.setActionCommand("Login");
+//    login.add(toggleButton);
+//    toggleButton.addActionListener(this);
+//    login.add(Box.createRigidArea(new Dimension(0, 5)));
+//    panel.add(login);
+//    
+//    //___________________________________________________________________________________
+//    //___________________________________________________________________________________
     
-    JRadioButton pRadio = new JRadioButton("Provider");
-    pRadio.setActionCommand("Provider");
-    group.add(pRadio);
-    bottom.add(pRadio);
-    pRadio.addActionListener(this);
-    bottom.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel.add(bottom);
+    mpanel = new JPanel(new BorderLayout(0, 0));
+    mpanel.add(new JTextArea("Current Date: 11/2/2013\nService Date: 10/14/2013\nName: Myself I"),null);
 
-    //Services Provided Panel
-    login = new JPanel();
-    toggleButton = new JButton("Login");
-    toggleButton.setActionCommand("Login");
-    login.add(toggleButton);
-    toggleButton.addActionListener(this);
-    login.add(Box.createRigidArea(new Dimension(0, 5)));
-    panel.add(login);
+    ppanel = new JPanel(new BorderLayout(0, 0));
+    ppanel.add(new JTextArea("Service Date: 10/14/2013\nName: Myself I"), null);
     
-    //___________________________________________________________________________________
-    //___________________________________________________________________________________
-    */
+    spanel = new JPanel(new BorderLayout(0, 0));
+    spanel.add(new JTextArea("LOLOLOLOLO"),null);
 
     //Member information tabbed pane 1
     member = new JTabbedPane();
@@ -116,7 +134,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     setDefaultCloseOperation(EXIT_ON_CLOSE);        
   }
 
-  public void actionPerformed(ActionEvent event) {
+	public void actionPerformed(ActionEvent event) {
     //Print out the action retrieved
     System.out.println(event.getActionCommand());
     
@@ -135,10 +153,10 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
         topPanel.setVisible(false);
         bottom.setVisible(false);
         login.setVisible(false);
-        
-        member.addTab("Member Information", mpanel);        
-        member.addTab("Provider Informataion", ppanel);
-        member.addTab("Services Provided", spanel);
+
+        member.addTab("Member Information", mpanel); 
+        member.addTab("Provider Information", null, ppanel);
+        member.addTab("Services Provided", null, spanel);
         
       }
       else{
