@@ -237,6 +237,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     //Create tab pane 
     member = new JTabbedPane();
     panel.add(member, BorderLayout.NORTH);
+    member.setVisible(false);
         
     pack();
 
