@@ -31,21 +31,21 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
   private JButton logoutButton, logout2Button, logout3Button, logout4Button, logout5Button;
   private JPanel topPanel, bottom, login;
   private JPanel mpanel, ppanel;
-  private JPanel apanel, dpanel, upanel, vpanel;
+  private JPanel apanel, dpanel, upanel;
   private JTabbedPane member;
   private JLabel topPanel2;
-  private JLabel mname;
   private static int state = 0;
   
   ImageIcon icon = new ImageIcon(getClass().getResource("ChocAnLogo.jpg"));
 
   public ChocoholicFirstWindow() {
+  	
+  	//Create the main panel
     JPanel panel = new JPanel();
     panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
     add(panel);
     
     //Login Dialog Box
-    
     topPanel = new JPanel(new BorderLayout(0, 0));
     topPanel.setBorder(new EmptyBorder(new Insets(20, 25, 15, 25)));
     topPanel.add(new JTextField("User ID#"), BorderLayout.SOUTH);
@@ -56,11 +56,11 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     panel.add(topPanel2);
     panel.add(topPanel);
     
-    
     //Radio Buttons Panel for member and provider
     bottom = new JPanel(new FlowLayout(FlowLayout.CENTER));
     ButtonGroup group = new ButtonGroup(); 
-      
+    
+    //Member Radio Button
     JRadioButton mRadio = new JRadioButton("Member");
     mRadio.setActionCommand("Member");
     group.add(mRadio);
@@ -68,6 +68,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     mRadio.addActionListener(this);
     bottom.add(Box.createRigidArea(new Dimension(0, 0)));
     
+    //Provider Radio Button
     JRadioButton pRadio = new JRadioButton("Provider");
     pRadio.setActionCommand("Provider");
     group.add(pRadio);
@@ -76,6 +77,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     bottom.add(Box.createRigidArea(new Dimension(0, 0)));
     panel.add(bottom);
     
+    //ChocAn Operator Button
     JRadioButton oRadio = new JRadioButton("ChocAn Operator");
     oRadio.setActionCommand("ChocAn Operator");
     group.add(oRadio);
@@ -231,25 +233,14 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     upanel.add(Box.createRigidArea(new Dimension(0,0)));
     logoutButton = new JButton("Logout");
     upanel.add(logout5Button);
-    
-    //ppanel = new JPanel(new BorderLayout(0, 0));
-    //ppanel.add(new JTextField("Service Date: 10/14/2013\nName: Myself I"), null);
-    
-    //spanel = new JPanel(new BorderLayout(0, 0));
-    //spanel.add(new JTextField("LOLOLOLOLO"),null);
 
-    //Member information tabbed pane 1
+    //Create tab pane 
     member = new JTabbedPane();
     panel.add(member, BorderLayout.NORTH);
-    //member.remove(panel1);
-    
-    //Provider information tabbed pane 2
-    //provider = new JTabbedPane();
-    //panel.add(provider, BorderLayout.NORTH);
-    //provider.remove(panel1);
-    
+        
     pack();
 
+    //Set window properties
     setTitle("Chocoholics Anonymous");
     setSize(640, 400);
     setLocationRelativeTo(null);
@@ -257,6 +248,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
   }
 
 	public void actionPerformed(ActionEvent event) {
+		
     //Print out the action retrieved
     System.out.println(event.getActionCommand());
     
@@ -270,7 +262,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
       state = 1;
     }
     
-    //Changes state to one if Provider is selected
+    //Changes state to two if ChocAn Operator is selected
     if ("ChocAn Operator".equals(event.getActionCommand())){
       state = 2;
     }
@@ -333,12 +325,8 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
         topPanel2.setVisible(false);
         bottom.setVisible(false);
         login.setVisible(false);
-
-        member.addTab("Member Information", mpanel); 
-        //member.addTab("Provider Information", null, ppanel);
-        //member.addTab("Services Provided", null, spanel);
         
-        
+        member.addTab("Member Information", mpanel);         
       }
       else if (state == 1){
       	member.setVisible(true);
@@ -359,9 +347,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
         member.addTab("Add Member/Provider", apanel);
         member.addTab("Delete Member/Provider", dpanel);
         member.addTab("Update Member/Provider", upanel);
-      
       }
-      
     } 
   }
 
