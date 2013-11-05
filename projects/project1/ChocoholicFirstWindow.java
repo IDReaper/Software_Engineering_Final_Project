@@ -130,6 +130,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     pack();
 
     setTitle("Chocoholics Anonymous");
+    setSize(800, 500);
     setLocationRelativeTo(null);
     setDefaultCloseOperation(EXIT_ON_CLOSE);        
   }
