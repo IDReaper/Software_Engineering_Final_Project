@@ -10,8 +10,10 @@ import java.awt.event.ActionListener;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
@@ -27,7 +29,10 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
   private JPanel mpanel, ppanel, spanel;
   private JPanel apanel, dpanel, upanel, vpanel;
   private JTabbedPane member;
+  private JLabel topPanel2;
   private static int state = 0;
+  
+  ImageIcon icon = new ImageIcon(getClass().getResource("ChocAnLogo.jpg"));
 
   public ChocoholicFirstWindow() {
     JPanel panel = new JPanel();
@@ -35,10 +40,16 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     add(panel);
     
     //Login Dialog Box
+    
     topPanel = new JPanel(new BorderLayout(0, 0));
     topPanel.setBorder(new EmptyBorder(new Insets(20, 25, 15, 25)));
     topPanel.add(new JTextArea("User ID#"), BorderLayout.SOUTH);
+    topPanel2 = new JLabel();
+    topPanel2.setIcon(icon);
+    topPanel2.setBorder(new EmptyBorder(new Insets(20, 0, 0, 0)));
+    panel.add(topPanel2);
     panel.add(topPanel);
+    
 
     //Radio Buttons Panel for member and provider
     bottom = new JPanel(new FlowLayout(FlowLayout.RIGHT));
