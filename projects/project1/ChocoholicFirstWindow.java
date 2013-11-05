@@ -37,7 +37,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     //Login Dialog Box
     topPanel = new JPanel(new BorderLayout(0, 0));
     topPanel.setBorder(new EmptyBorder(new Insets(20, 25, 15, 25)));
-    topPanel.add(new JTextArea("Username"), BorderLayout.CENTER);
+    topPanel.add(new JTextArea("User ID#"), BorderLayout.SOUTH);
     panel.add(topPanel);
 
     //Radio Buttons Panel for member and provider
@@ -130,7 +130,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     pack();
 
     setTitle("Chocoholics Anonymous");
-    setSize(800, 500);
+    setSize(640, 400);
     setLocationRelativeTo(null);
     setDefaultCloseOperation(EXIT_ON_CLOSE);        
   }
