@@ -34,8 +34,9 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
   private JPanel apanel, dpanel, upanel;
   private JTabbedPane member;
   private JLabel topPanel2;
+  private JTextField userText;
   private static int state = 0;
-  
+    
   ImageIcon icon = new ImageIcon(getClass().getResource("ChocAnLogo.jpg"));
 
   public ChocoholicFirstWindow() {
@@ -48,7 +49,8 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     //Login Dialog Box
     topPanel = new JPanel(new BorderLayout(0, 0));
     topPanel.setBorder(new EmptyBorder(new Insets(20, 25, 15, 25)));
-    topPanel.add(new JTextField("User ID#"), BorderLayout.SOUTH);
+    userText = new JTextField(""); 
+    topPanel.add(userText, BorderLayout.SOUTH);
     topPanel2 = new JLabel();
     topPanel2.setIcon(icon);
     topPanel2.setBorder(new EmptyBorder(new Insets(20, 0, 0, 0)));
@@ -68,6 +70,11 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     mRadio.addActionListener(this);
     bottom.add(Box.createRigidArea(new Dimension(0, 0)));
     
+    //Defaults the member radio button as selected
+    userText.setText("Member ID#");
+    userText.setSelectionStart(0);
+    mRadio.setSelected(true);
+    
     //Provider Radio Button
     JRadioButton pRadio = new JRadioButton("Provider");
     pRadio.setActionCommand("Provider");
@@ -77,6 +84,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     bottom.add(Box.createRigidArea(new Dimension(0, 0)));
     panel.add(bottom);
     
+    
     //ChocAn Operator Button
     JRadioButton oRadio = new JRadioButton("ChocAn Operator");
     oRadio.setActionCommand("ChocAn Operator");
@@ -85,6 +93,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     oRadio.addActionListener(this);
     bottom.add(Box.createRigidArea(new Dimension(0, 0)));
     panel.add(bottom);
+    
 
     //Login Button Panel
     login = new JPanel();
@@ -256,16 +265,22 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     //Changes state to zero if member is selected
     if ("Member".equals(event.getActionCommand())){
       state = 0;
+      userText.setText("Member ID#");
+      userText.setSelectionStart(0);
     }
     
     //Changes state to one if Provider is selected
     if ("Provider".equals(event.getActionCommand())){
       state = 1;
+      userText.setText("Provider ID#");
+      userText.setSelectionStart(0);      
     }
     
     //Changes state to two if ChocAn Operator is selected
     if ("ChocAn Operator".equals(event.getActionCommand())){
       state = 2;
+      userText.setText("ChocAn Operator ID#");
+      
     }
     
     //Logout button
