@@ -3,10 +3,12 @@ package project1;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -25,11 +27,13 @@ import javax.swing.border.EmptyBorder;
 public class ChocoholicFirstWindow extends JFrame implements ActionListener {
 
   private JButton toggleButton;
+  private JButton submitButton;
   private JPanel topPanel, bottom, login;
   private JPanel mpanel, ppanel, spanel;
   private JPanel apanel, dpanel, upanel, vpanel;
   private JTabbedPane member;
   private JLabel topPanel2;
+  private JLabel mname;
   private static int state = 0;
   
   ImageIcon icon = new ImageIcon(getClass().getResource("ChocAnLogo.jpg"));
@@ -46,13 +50,13 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     topPanel.add(new JTextArea("User ID#"), BorderLayout.SOUTH);
     topPanel2 = new JLabel();
     topPanel2.setIcon(icon);
-    topPanel2.setBorder(new EmptyBorder(new Insets(20, 0, 0, 0)));
+    topPanel2.setBorder(new EmptyBorder(new Insets(20, 0, 0, 150)));
     panel.add(topPanel2);
     panel.add(topPanel);
     
 
     //Radio Buttons Panel for member and provider
-    bottom = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+    bottom = new JPanel(new FlowLayout(FlowLayout.CENTER));
     ButtonGroup group = new ButtonGroup(); 
       
     JRadioButton mRadio = new JRadioButton("Member");
@@ -60,14 +64,22 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     group.add(mRadio);
     bottom.add(mRadio);
     mRadio.addActionListener(this);
-    bottom.add(Box.createRigidArea(new Dimension(10, 0)));
+    bottom.add(Box.createRigidArea(new Dimension(0, 0)));
     
     JRadioButton pRadio = new JRadioButton("Provider");
     pRadio.setActionCommand("Provider");
     group.add(pRadio);
     bottom.add(pRadio);
     pRadio.addActionListener(this);
-    bottom.add(Box.createRigidArea(new Dimension(10, 0)));
+    bottom.add(Box.createRigidArea(new Dimension(0, 0)));
+    panel.add(bottom);
+    
+    JRadioButton oRadio = new JRadioButton("ChocAn Operator");
+    oRadio.setActionCommand("ChocAn Operator");
+    group.add(oRadio);
+    bottom.add(oRadio);
+    pRadio.addActionListener(this);
+    bottom.add(Box.createRigidArea(new Dimension(0, 0)));
     panel.add(bottom);
 
     //Login Button Panel
@@ -79,49 +91,28 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     login.add(Box.createRigidArea(new Dimension(0, 5)));
     panel.add(login);
     
-    
-    //NEW PANELS START HERE______________________________________________________________
-    //___________________________________________________________________________________
-    //These are the new panels for the tabbed panes. Most of them still need edits. The first
-    //four lines of member information panel may serve as a template for everything else.
-    
-    	//Member Information Panel
-//	    panel.add(mpanel);
-    	
-//    //Provider Information Panel
-//    bottom = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-//    ButtonGroup group = new ButtonGroup(); 
-//      
-//    JRadioButton mRadio = new JRadioButton("Member");
-//    mRadio.setActionCommand("Member");
-//    group.add(mRadio);
-//    bottom.add(mRadio);
-//    mRadio.addActionListener(this);
-//    bottom.add(Box.createRigidArea(new Dimension(10, 0)));
-//    
-//    JRadioButton pRadio = new JRadioButton("Provider");
-//    pRadio.setActionCommand("Provider");
-//    group.add(pRadio);
-//    bottom.add(pRadio);
-//    pRadio.addActionListener(this);
-//    bottom.add(Box.createRigidArea(new Dimension(10, 0)));
-//    panel.add(bottom);
-//
-//    //Services Provided Panel
-//    login = new JPanel();
-//    toggleButton = new JButton("Login");
-//    toggleButton.setActionCommand("Login");
-//    login.add(toggleButton);
-//    toggleButton.addActionListener(this);
-//    login.add(Box.createRigidArea(new Dimension(0, 5)));
-//    panel.add(login);
-//    
-//    //___________________________________________________________________________________
-//    //___________________________________________________________________________________
-    
-    mpanel = new JPanel(new BorderLayout(0, 0));
-    mpanel.add(new JTextArea("Current Date: 11/2/2013\nService Date: 10/14/2013\nName: Myself I"),null);
-
+    mpanel = new JPanel();
+    mpanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+    mpanel.setLayout(new GridLayout(7, 2, -200, 5));
+    //mpanel.setLayout(new BoxLayout(mpanel, BoxLayout.Y_AXIS));
+    //mpanel.setBorder(new EmptyBorder(new Insets(20, 225, 15, 25)));
+    //mpanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    mpanel.add(new JLabel("Member name:"));
+    mpanel.add(new JTextArea("")); 
+    mpanel.add(new JLabel("Member number:"));    
+    mpanel.add(new JTextArea(""));    
+    mpanel.add(new JLabel("Member street address"));    
+    mpanel.add(new JTextArea(""));    
+    mpanel.add(new JLabel("Member city"));    
+    mpanel.add(new JTextArea(""));    
+    mpanel.add(new JLabel("Member state"));    
+    mpanel.add(new JTextArea(""));    
+    mpanel.add(new JLabel("Member ZIP code"));    
+    mpanel.add(new JTextArea(""));    
+    mpanel.add(Box.createRigidArea(new Dimension(0, 0)));
+    submitButton = new JButton("Submit");
+    mpanel.add(submitButton);
+   
     ppanel = new JPanel(new BorderLayout(0, 0));
     ppanel.add(new JTextArea("Service Date: 10/14/2013\nName: Myself I"), null);
     
@@ -163,6 +154,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     if ("Login".equals(event.getActionCommand())){
       if (state == 0){         
         topPanel.setVisible(false);
+        topPanel2.setVisible(false);
         bottom.setVisible(false);
         login.setVisible(false);
 
@@ -173,6 +165,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
       }
       else{
         topPanel.setVisible(false);
+        topPanel2.setVisible(false);
         bottom.setVisible(false);
         login.setVisible(false);
         
