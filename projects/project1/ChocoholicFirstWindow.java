@@ -176,7 +176,6 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     submitButton = new JButton("Submit");
     ppanel.add(submitButton);
     ppanel.add(Box.createRigidArea(new Dimension(0,0)));
-    //logoutButton = new JButton("Logout");
     ppanel.add(logout2Button);
     
     //Provider update panel
@@ -199,7 +198,6 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     submitButton = new JButton("Send Bill");
     pbpanel.add(submitButton);
     pbpanel.add(Box.createRigidArea(new Dimension(0,0)));
-    //logoutButton = new JButton("Logout");
     pbpanel.add(logout6Button);
     
     //ChocAn ADD panel
@@ -222,7 +220,6 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     submitButton = new JButton("ADD");
     apanel.add(submitButton);
     apanel.add(Box.createRigidArea(new Dimension(0,0)));
-    //logoutButton = new JButton("Logout");
     apanel.add(logout3Button);
     
     //ChocAn DELETE panel
@@ -245,7 +242,6 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     submitButton = new JButton("DELETE");
     dpanel.add(submitButton);
     dpanel.add(Box.createRigidArea(new Dimension(0,0)));
-    //logoutButton = new JButton("Logout");
     dpanel.add(logout4Button);
     
     //ChocAn UPDATE panel
@@ -268,7 +264,6 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     submitButton = new JButton("UPDATE");
     upanel.add(submitButton);
     upanel.add(Box.createRigidArea(new Dimension(0,0)));
-    //logoutButton = new JButton("Logout");
     upanel.add(logout5Button);
 
     //Create tab pane 
