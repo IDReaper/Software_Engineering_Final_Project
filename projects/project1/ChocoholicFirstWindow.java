@@ -8,6 +8,19 @@
  * http://www.wallsave.com/wallpaper/1024x768/women-club-chocolate-eating-girls-205431.html
  */
 
+/*
+ * To compile this program you can use the following steps:
+ * 
+ * javac ChocoholicFirstWindow.java
+ * 
+ * To execute:
+ * 
+ * java ChocoholicFirstWindow
+ * 
+ * Or this program may be run using Eclipse or DrJava IDE's
+ */
+
+//You will probably need to comment out the next line to compile.
 package project1;
 
 import java.awt.BorderLayout;
