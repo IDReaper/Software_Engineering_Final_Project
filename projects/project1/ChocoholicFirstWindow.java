@@ -28,9 +28,9 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
 
   private JButton toggleButton;
   private JButton submitButton;
-  private JButton logoutButton, logout2Button, logout3Button, logout4Button, logout5Button;
+  private JButton logoutButton, logout2Button, logout3Button, logout4Button, logout5Button, logout6Button;
   private JPanel topPanel, bottom, login;
-  private JPanel mpanel, ppanel;
+  private JPanel mpanel, ppanel, pbpanel;
   private JPanel apanel, dpanel, upanel;
   private JTabbedPane member;
   private JLabel topPanel2;
@@ -129,6 +129,11 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     logout5Button.setActionCommand("Logout5");
     logout5Button.addActionListener(this);
     
+    //Logout Button 6
+    logout6Button = new JButton("Logout");
+    logout6Button.setActionCommand("Logout6");
+    logout6Button.addActionListener(this);
+    
     //Member update tab
     mpanel = new JPanel();
     mpanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
@@ -171,8 +176,31 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     submitButton = new JButton("Submit");
     ppanel.add(submitButton);
     ppanel.add(Box.createRigidArea(new Dimension(0,0)));
-    logoutButton = new JButton("Logout");
+    //logoutButton = new JButton("Logout");
     ppanel.add(logout2Button);
+    
+    //Provider update panel
+    pbpanel = new JPanel();
+    pbpanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+    pbpanel.setLayout(new GridLayout(8, 2, -200, 5));
+    pbpanel.add(new JLabel("Date of service:"));
+    pbpanel.add(new JTextField("")); 
+    pbpanel.add(new JLabel("Date and time data recieved:"));    
+    pbpanel.add(new JTextField(""));    
+    pbpanel.add(new JLabel("Member name:"));    
+    pbpanel.add(new JTextField(""));    
+    pbpanel.add(new JLabel("Member number:"));    
+    pbpanel.add(new JTextField(""));    
+    pbpanel.add(new JLabel("Service code:"));    
+    pbpanel.add(new JTextField(""));    
+    pbpanel.add(new JLabel("Fee to be paid:"));    
+    pbpanel.add(new JTextField(""));    
+    pbpanel.add(Box.createRigidArea(new Dimension(0,0)));
+    submitButton = new JButton("Send Bill");
+    pbpanel.add(submitButton);
+    pbpanel.add(Box.createRigidArea(new Dimension(0,0)));
+    //logoutButton = new JButton("Logout");
+    pbpanel.add(logout6Button);
     
     //ChocAn ADD panel
     apanel = new JPanel();
@@ -194,7 +222,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     submitButton = new JButton("ADD");
     apanel.add(submitButton);
     apanel.add(Box.createRigidArea(new Dimension(0,0)));
-    logoutButton = new JButton("Logout");
+    //logoutButton = new JButton("Logout");
     apanel.add(logout3Button);
     
     //ChocAn DELETE panel
@@ -217,7 +245,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     submitButton = new JButton("DELETE");
     dpanel.add(submitButton);
     dpanel.add(Box.createRigidArea(new Dimension(0,0)));
-    logoutButton = new JButton("Logout");
+    //logoutButton = new JButton("Logout");
     dpanel.add(logout4Button);
     
     //ChocAn UPDATE panel
@@ -240,7 +268,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     submitButton = new JButton("UPDATE");
     upanel.add(submitButton);
     upanel.add(Box.createRigidArea(new Dimension(0,0)));
-    logoutButton = new JButton("Logout");
+    //logoutButton = new JButton("Logout");
     upanel.add(logout5Button);
 
     //Create tab pane 
@@ -333,6 +361,16 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
       login.setVisible(true);
     }
     
+    //Logout button 6
+    if ("Logout6".equals(event.getActionCommand())){
+    	member.setVisible(false);
+    	member.removeAll();
+    	topPanel.setVisible(true);
+      topPanel2.setVisible(true);
+      bottom.setVisible(true);
+      login.setVisible(true);
+    }
+    
     //When login is selected, depending on the state switch, a set of tabbed panes are added
     if ("Login".equals(event.getActionCommand())){
       if (state == 0){         
@@ -351,7 +389,8 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
         bottom.setVisible(false);
         login.setVisible(false);
         
-        member.addTab("Provider Information", ppanel);        
+        member.addTab("Provider Information", ppanel);
+        member.addTab("Send Bill", pbpanel); 
       }
       else{
       	member.setVisible(true);
