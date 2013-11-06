@@ -1,3 +1,13 @@
+/*
+ * Jean-Marcel Belmont, Gabriel Hairston, Shawn Thompson
+ * Chocoholics Anonymous Rapid Prototype
+ * Dr. Mingxian Jin
+ * Project 1
+ * 
+ * Link to picture used for project logo:
+ * http://www.wallsave.com/wallpaper/1024x768/women-club-chocolate-eating-girls-205431.html
+ */
+
 package project1;
 
 import java.awt.BorderLayout;
