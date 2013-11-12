@@ -47,7 +47,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 @SuppressWarnings("serial")
-public class ChocoholicFirstWindow extends JFrame implements ActionListener {
+public class ChocolicFirstWindow extends JFrame implements ActionListener {
 
   private JButton toggleButton;
   private JButton submitButton;
@@ -62,7 +62,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     
   ImageIcon icon = new ImageIcon(getClass().getResource("ChocAnLogo.jpg"));
 
-  public ChocoholicFirstWindow() {
+  public ChocolicFirstWindow() {
   	
   	//Create the main panel
     JPanel panel = new JPanel();
@@ -428,7 +428,7 @@ public class ChocoholicFirstWindow extends JFrame implements ActionListener {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
-        ChocoholicFirstWindow chocowindow = new ChocoholicFirstWindow();
+        ChocolicFirstWindow chocowindow = new ChocolicFirstWindow();
         chocowindow.setVisible(true);
       }
     });

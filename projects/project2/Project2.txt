@@ -1,0 +1,21 @@
+1. A formal description of the software product in one single paragraph (for you to use noun extraction to draw entity classes) (10%).
+We can look at appendix to answer this.
+
+2. Normal scenarios of three non-trivial use cases (15%). 
+**** Fix these on our use cases ****
+Non-trivial use case: Manage member and provider accounts need to be two separate use cases, because we have two separate tabs on our gui.
+Non-trivial use case: 
+
+3. A statechart of the system (15%).
+Refer to figure 13.7 on page 415 for a statechart of a system example.
+On our gui we can three interfaces with tabs on two of them.
+
+4. Collaboration diagrams and/or sequence diagrams for each of the non-trivial use cases (30%).
+Refer to 436-452 (sequence diagrams) which go hand in hand.
+
+5. The last refined version of the overall class diagram (20%).
+Refer to page 438, figure 13.34 is an exampe of class diagram and figure 13.36 is another example 
+
+6. A log file that records every task each team member has done and each team activity including dates. 
+   Also indicate the percentage each team member has contributed to the project (The total is 100%) (10%).
+Need to indicate the percentage for each group member.
