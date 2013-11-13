@@ -61,7 +61,7 @@ public class ChocolicFirstWindow extends JFrame implements ActionListener {
   private static int state = 0;
     
   ImageIcon icon = new ImageIcon(getClass().getResource("ChocAnLogo.jpg"));
-
+  
   public ChocolicFirstWindow() {
   	
   	//Create the main panel
