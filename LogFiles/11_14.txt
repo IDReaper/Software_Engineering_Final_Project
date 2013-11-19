@@ -1,0 +1,12 @@
+Discussed non-trival use cases.
+
+The three non-trivial use cases:
+1. Manage member accounts
+2. Manage member validation
+3. Accounting services
+
+Overall state diagram:
+Split the use case for Manage Member and Provider Accounts into multiple
+branches in the overall use cases. Every use case needs to be in overall
+state diagram.
+Dr. Jin wants to see refinement. 
