@@ -73,6 +73,13 @@ void validateAccount(int user_privileges, int password, int userID){
 
 
 
+String getUsrInput(){
+	getText from text field object;
+}
+
+
+
+
 
 
 
