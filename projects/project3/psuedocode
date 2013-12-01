@@ -1,0 +1,72 @@
+void addMember("All that member info stuff"){
+	//check for the member, to see if they are already there
+	for (member in database){
+		if (member.ID == memberID)
+			get this member;
+	}
+	if (matching member id was found){
+		return "Member already exists."
+	}
+	else{
+		create new member object;
+		set all that member info stuff;
+		add member to database;
+		return "Member added"
+	}
+}
+
+void deleteMember("member id stuff"){
+	//check for the member, to see if they are already there
+	for (member in database){
+		if (member.ID == memberID)
+			get this member;
+	}
+	if (matching member id was found){
+	    delete member object;
+		return "Member found and deleted."
+	}
+	else{
+		return "Member object not found"
+	}
+}
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
